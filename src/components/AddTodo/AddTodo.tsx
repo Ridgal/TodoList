@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { TodosProps } from '../../app/App';
 import { ITodo } from '../../interfaces';
 import './AddTodo.scss';
 

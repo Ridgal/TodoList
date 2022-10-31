@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import { ITodo } from '../../interfaces';
 import './Todolist.scss';
 
@@ -37,24 +38,30 @@ const Todolist:React.FC<TodosListProps> = ({ todos, setTodos, status }) => {
             }
           }
           return (
-            <li
-              key={item.id}
-              className={ item.status ? 'completed' : '' }>
-              <div className="view">
-                <input 
-                  className="toggle"
-                  id={item.title}
-                  type="checkbox"
-                  onChange={ () => statusTodo(item.id)} 
-                  checked={item.status} />
-                <label htmlFor={item.title}>{item.title}</label>
-                <button 
-                  type="button"
-                  className="closed"
-                  onClick={ () => deleteTodo(item.id)}>
-                  </button>
-              </div>
-            </li>
+          <AnimatePresence>
+            <motion.div
+              initial={{opacity: 0, height: 0}}
+              animate={{opacity: 1, height: 'auto'}} >
+              <li
+                key={item.id}
+                className={ item.status ? 'completed' : '' }>
+                <div className="view">
+                  <input 
+                    className="toggle"
+                    id={item.title}
+                    type="checkbox"
+                    onChange={ () => statusTodo(item.id)} 
+                    checked={item.status} />
+                  <label htmlFor={item.title}>{item.title}</label>
+                  <button 
+                    type="button"
+                    className="closed"
+                    onClick={ () => deleteTodo(item.id)}>
+                    </button>
+                </div>
+              </li>
+            </motion.div>
+          </AnimatePresence>
           )
         })}
       </ul>
