@@ -1,5 +1,5 @@
 # TodoList
-## Простой, но красивый Todolist. Stack: (Typescript, React, Redux Toolkit, SCSS)
+## Простой, но красивый Todolist. Stack: (Typescript, React, Redux Hooks, SCSS)
 ## Vercel - https://todolist-ts-beige.vercel.app/
 ![Todolist](https://github.com/Ridgal/TODOLIST-TS/blob/master/src/assets/images/screen.png)
 
